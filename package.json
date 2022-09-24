@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "quasar dev -m ssr",
     "build": "quasar build -m ssr",
+    "start": "node dist/ssr/index.js",
     "lint": "eslint --ext .js,.ts,.vue ./",
     "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
     "test": "vitest",
