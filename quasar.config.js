@@ -22,7 +22,7 @@ module.exports = configure(function (/* ctx */) {
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
-    // preFetch: true,
+    preFetch: true,
 
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
@@ -30,16 +30,16 @@ module.exports = configure(function (/* ctx */) {
     boot: [],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
-    css: ['app.scss'],
+    css: ['app.scss', 'main.css'],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
-      // 'ionicons-v4',
-      // 'mdi-v5',
+      'ionicons-v4',
+      'mdi-v5',
       // 'fontawesome-v6',
-      // 'eva-icons',
-      // 'themify',
-      // 'line-awesome',
+      'eva-icons',
+      'themify',
+      'line-awesome',
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
       'roboto-font', // optional, you are not bound to it
@@ -102,10 +102,18 @@ module.exports = configure(function (/* ctx */) {
               '@vueuse/head',
               '@vueuse/core',
               {
-                quasar: ['useQuasar', 'useMeta'],
-                axios: [['default', 'axios']],
+                quasar: [
+                  'useQuasar',
+                  'Notify',
+                  'Dialog',
+                  'LocalStorage',
+                  'useMeta',
+                ],
+                axios: ['AxiosInstance', ['default', 'axios']],
+                'quasar/wrappers': ['boot'],
               },
             ],
+            dirs: ['src/composables/', 'src/composables/**'],
             dts: 'src/auto-imports.d.ts',
           },
         ],
@@ -115,16 +123,25 @@ module.exports = configure(function (/* ctx */) {
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
     devServer: {
       // https: true
-      open: true, // opens browser window automatically
+      port: 3000,
+      open: false, // opens browser window automatically
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
     framework: {
       // Quasar plugins
-      plugins: [],
+      plugins: [
+        'Dialog',
+        'Notify',
+        'LoadingBar',
+        'Loading',
+        'LocalStorage',
+        'Cookies',
+        'SessionStorage',
+      ],
       config: {},
 
-      // iconSet: 'material-icons', // Quasar icon set
+      iconSet: 'material-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
 
       // For special cases outside of where the auto-import strategy can have an impact
@@ -133,6 +150,7 @@ module.exports = configure(function (/* ctx */) {
       //
       // components: [],
       // directives: [],
+      cssAddon: true,
     },
 
     // animations: 'all', // --- includes all animations
@@ -159,15 +177,16 @@ module.exports = configure(function (/* ctx */) {
       // extendSSRWebserverConf (esbuildConf) {},
       // extendPackageJson (json) {},
 
-      pwa: false,
+      pwa: true,
 
       // manualStoreHydration: true,
       // manualPostHydrationTrigger: true,
 
-      prodPort: 3000, // The default port that the production server should use
+      prodPort: 3001, // The default port that the production server should use
       // (gets superseded if process.env.PORT is specified at runtime)
 
       middlewares: [
+        'router', // keep this as last one
         'render', // keep this as last one
       ],
     },

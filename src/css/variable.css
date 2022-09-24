@@ -1,0 +1,10 @@
+:root {
+  --font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --ineed-bg: #fcfcfc;
+  --ineed-hover-bg: #f6f6f6;
+  /* --ineed-text: #1f2937; */
+  --ineed-bc: #e5e7eb;
+  --dark: #1d1d1d;
+}

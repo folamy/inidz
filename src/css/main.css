@@ -1,0 +1,55 @@
+html,
+html.light,
+body.light,
+.body--light,
+#app.dark {
+  background: #f2f2f2;
+  color: #282828;
+}
+
+html.dark,
+body.dark,
+#app.dark {
+  background: #222;
+  color: white;
+}
+
+*::-webkit-scrollbar {
+  background-color: transparent;
+  height: 12px;
+  width: 12px;
+}
+
+*::-webkit-scrollbar-thumb {
+  transition: background 0.2s ease-in-out;
+  border: 3px solid transparent;
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.dark::-webkit-scrollbar-thumb {
+  background-color: transparent !important;
+}
+
+#mainHeader .q-btn {
+  /* @apply text-hex-282828 dark: (text-white) */
+}
+
+.qqD {
+  border: 1px solid red !important;
+}
+
+:root {
+  --ineed-bg: #fcfcfc;
+  --ineed-hover-bg: #f6f6f6;
+  /* --ineed-text: #1f2937; */
+  --ineed-bc: #e5e7eb;
+  --dark: #222;
+}
