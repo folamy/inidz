@@ -54,10 +54,8 @@ declare module '@vue/runtime-core' {
     QList: typeof import('quasar')['QList'];
     QPage: typeof import('quasar')['QPage'];
     QPageContainer: typeof import('quasar')['QPageContainer'];
-    QRouteTab: typeof import('quasar')['QRouteTab'];
     QScrollArea: typeof import('quasar')['QScrollArea'];
     QSpace: typeof import('quasar')['QSpace'];
-    QTabs: typeof import('quasar')['QTabs'];
     QToolbar: typeof import('quasar')['QToolbar'];
     QToolbarTitle: typeof import('quasar')['QToolbarTitle'];
     RateItem: typeof import('./components/items/rateItem.vue')['default'];
