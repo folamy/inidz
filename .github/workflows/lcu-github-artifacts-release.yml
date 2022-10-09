@@ -13,8 +13,8 @@ env:
   Branches: main
   MainBranch: main
   NPMRegistry: https://registry.npmjs.org/
-  InstallCommand: npm i
-  BuildCommand: npm run build
+  InstallCommand: yarn install
+  BuildCommand: yarn build
   Output: dist/ssr
 
 jobs:
